@@ -1,7 +1,8 @@
 
 // ------------------ Functional Programming ------------------
+// Emphasizes the use of pure functions and avoids shared state and mutable data.
 
-// Given an array of numbers, double each number and return a new array
+// Task: Given an array of numbers, double each number and return a new array
 const numbers = [1, 2, 3, 4, 5];
 let doubledNumbers = [];
 
@@ -48,7 +49,6 @@ numbers2.push(5); // ❌ Avoid mutation
 // Functional (Creates a new array)
 const newNumbers = [...numbers2, 5];
 console.log(newNumbers); // [1, 2, 3, 4, 5]
-
 
 const person = { nombre: 'Juan', edad: 25 };
 const newPerson = { ...person, edad: 26 }; 
