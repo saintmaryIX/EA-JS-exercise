@@ -4,7 +4,7 @@
 
 console.log("Start");
 
-function fetchUser(id, callback) {
+function muñaño(id, callback) {
   console.log(`...Fetching data for user ${id}...`);
   
   setTimeout(() => {
@@ -19,6 +19,6 @@ function displayUser(user) {
   console.log(`User Received: ${user.name}, Age: ${user.age}`);
 }
 
-fetchUser(1, displayUser);
+muñaño(1, displayUser);
 
 console.log("End");

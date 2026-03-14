@@ -24,7 +24,7 @@ function getOrderDetails(orderId, callback) {
   }, 1000);
 }
 
-// ❌ Callback Hell (Pyramid of Doom)
+
 getUser(1, (user) => {
   getOrders(user.id, (orders) => {
     getOrderDetails(orders[0].orderId, (details) => {

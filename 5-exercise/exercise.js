@@ -8,10 +8,13 @@
 fetch('https://jsonplaceholder.typicode.com/users/')
   .then(response => response.json())
   .then(users => {
-    console.log("--- Processed Users ---");
+    console.log("--- users descargados ---");
 
     // 1) Filter: solo IDs pares
-    const evenIdUsers = users.filter(user => user.id % 2 === 0); //me quedo con users de idpar
+    const evenIdUsers = users.filter(user => user.id % 2 === 0); //me quedo con users de 
+
+    console.log("--- users pares ---");
+    console.log(evenIdUsers);
 
     // 2) Transform: { id, name, city } sacando city de address (destructuring)
     const cleanedUsers = evenIdUsers.map(user => {
@@ -19,10 +22,14 @@ fetch('https://jsonplaceholder.typicode.com/users/')
       return { id, name, city };
     });
 
+    console.log("--- users con pocos campos ---");
+    console.log(cleanedUsers);
+
     // 3) Add: insertar "Guest User" al inicio SIN mutar el array
     const guestUser = { id: 0, name: "Guest User", city: "N/A" };
     const finalUsers = [guestUser, ...cleanedUsers]; //hago spread y meto a la izq del vector de users un nuevouser "guestuser"
 
+    console.log("--- users con pocos campos + guest---");
     console.log(finalUsers);
 
     console.log("--- Statistics ---");
@@ -32,5 +39,5 @@ fetch('https://jsonplaceholder.typicode.com/users/')
       return acc + user.username.length;
     }, 0);
 
-    console.log("Total characters in all usernames:", totalUsernameChars);
+    console.log("total caracteres:", totalUsernameChars);
   })
