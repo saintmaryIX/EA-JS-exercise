@@ -41,3 +41,4 @@ fetch('https://jsonplaceholder.typicode.com/users/')
 
     console.log("total caracteres:", totalUsernameChars);
   })
+
